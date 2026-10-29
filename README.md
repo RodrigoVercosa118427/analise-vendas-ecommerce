@@ -1,61 +1,73 @@
-# 📊 Análise de Vendas para E-commerce
+# 📊 Análise de Vendas de E-commerce com Python
 
-Projeto de análise de dados em Python que transforma o histórico de vendas de uma loja virtual em respostas para decisões de negócio: **o que vender, onde focar, quando agir e para onde expandir**.
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RodrigoVercosa118427/analise-vendas-ecommerce/blob/main/Mini_Projeto_Python_DataScience.ipynb)
 
-➡️ **[Abrir o notebook com todos os gráficos](analise_vendas_ecommerce.ipynb)**
+Mini projeto de Data Science desenvolvido no curso **Python para Data Science** (SENAI Suíço-Brasileira). Ele transforma dados brutos de vendas em respostas para perguntas de negócio, usando **Pandas, NumPy, Matplotlib e Seaborn**.
 
-## O problema de negócio
+## 🎯 Problema de negócio
 
-A loja está crescendo, mas as decisões ainda são tomadas por intuição:
+Uma loja de e-commerce em crescimento tomava decisões baseadas em intuição. O projeto responde a quatro perguntas:
 
-- **Estoque:** não se sabe quais produtos são os campeões de venda
-- **Marketing:** as campanhas são genéricas
-- **Sazonalidade:** não há visão das tendências ao longo dos meses
-- **Expansão:** não há clareza sobre onde investir
-
-## O que o projeto faz
-
-1. **Gera os dados:** uma função cria 500 pedidos fictícios, com produto, categoria, preço, quantidade, cliente, cidade e estado
-2. **Explora:** `head`, `info`, `describe` e tipos de dados
-3. **Prepara:** converte datas e cria novas colunas (`Faturamento`, `Status_Entrega` com função `lambda`, `Mes`)
-4. **Analisa e visualiza** quatro perguntas de negócio
-
-## Resultados
-
-| Produtos mais vendidos | Faturamento mensal |
+| Pergunta | Análise |
 |---|---|
-| ![Produtos mais vendidos](imagens/01_produtos_mais_vendidos.png) | ![Faturamento mensal](imagens/02_faturamento_mensal.png) |
+| O que vender? | Produtos mais vendidos e faturamento por categoria |
+| Quando agir? | Evolução do faturamento mensal |
+| Onde focar? | Faturamento por estado |
+| Para onde expandir? | Estados com maior demanda |
+
+## 🛠️ Etapas
+
+1. **Geração dos dados**: função em Python que cria 500 pedidos fictícios (produto, categoria, preço, quantidade, cliente, cidade e estado), com semente fixa para que os resultados sejam reproduzíveis.
+2. **Exploração**: `shape`, `info()`, `describe()` e tipos de dados.
+3. **Limpeza e engenharia de atributos**: conversão de datas, criação das colunas `Faturamento`, `Status_Entrega` e `Mes`.
+4. **Análises e gráficos**: agrupamentos com `groupby` e visualizações com Matplotlib e Seaborn.
+5. **Conclusão**: insights e próximos passos.
+
+## 📈 Resultados
+
+| Top produtos | Faturamento mensal |
+|---|---|
+| ![Top produtos](imagens/01_top_produtos.png) | ![Faturamento mensal](imagens/02_faturamento_mensal.png) |
 
 | Faturamento por estado | Faturamento por categoria |
 |---|---|
-| ![Faturamento por estado](imagens/03_faturamento_por_estado.png) | ![Faturamento por categoria](imagens/04_faturamento_por_categoria.png) |
+| ![Por estado](imagens/03_faturamento_estado.png) | ![Por categoria](imagens/04_faturamento_categoria.png) |
 
-**Principais números** (500 pedidos, de 01/jan a 10/abr/2026):
+### Principais insights
 
-- Faturamento total de **R$ 6,1 milhões** e ticket médio de **R$ 12,2 mil** por pedido
-- **Móveis** lidera com 36% do faturamento, puxado pela Cadeira Gamer
-- **Cadeira Gamer** e **Monitor Ultrawide** são os mais vendidos em quantidade
-- **CE** e **BA** faturam mais que SP, um sinal para olhar a expansão fora do Sudeste
-- A queda em abril **não é real**: o mês tem só 10 dias de dados. O notebook mostra isso numa célula de verificação.
+- 💰 Faturamento total de **R$ 6,13 milhões** em cerca de 3 meses.
+- 🪑 **Cadeira Gamer** e **Monitor Ultrawide** lideram em unidades vendidas. A categoria **Móveis** responde por cerca de 36% do faturamento.
+- 📅 O faturamento ficou estável, entre R$ 1,80 e R$ 1,88 milhão por mês (abril está incompleto).
+- 🗺️ **CE** e **BA** lideram o faturamento. **SP** ficou em último, o que indica oportunidade para marketing direcionado.
 
-> Os dados são fictícios e gerados com semente fixa (`seed 42`), então o resultado é sempre o mesmo.
+> ⚠️ Os dados são **fictícios**, gerados para fins de estudo.
 
-## Tecnologias
+## 🚀 Como executar
 
-- **Python 3**
-- **Pandas:** manipulação e agregação dos dados (`groupby`, `apply`, `to_period`)
-- **NumPy:** geração de valores aleatórios
-- **Matplotlib** e **Seaborn:** gráficos, paletas e formatação de eixos em R$
+**No Google Colab:** clique no botão *Abrir no Colab* no topo desta página. Você também pode fazer upload do notebook no Colab.
 
-## Como executar
+**Localmente:**
 
 ```bash
+git clone https://github.com/RodrigoVercosa118427/analise-vendas-ecommerce.git
+cd analise-vendas-ecommerce
 pip install -r requirements.txt
-jupyter notebook analise_vendas_ecommerce.ipynb
+jupyter notebook Mini_Projeto_Python_DataScience.ipynb
 ```
 
-Ou abra direto no [Google Colab](https://colab.research.google.com/): **Arquivo > Fazer upload de notebook**.
+## 📁 Estrutura
 
-## Autor
+```
+├── Mini_Projeto_Python_DataScience.ipynb   # Notebook com todo o projeto
+├── imagens/                                # Gráficos gerados pelo notebook
+├── requirements.txt                        # Bibliotecas necessárias
+└── README.md
+```
 
-**Rodrigo Verçosa**: projeto desenvolvido em aula presencial do curso de Python para Data Science.
+## 🧰 Tecnologias
+
+Python · Pandas · NumPy · Matplotlib · Seaborn · Jupyter / Google Colab
+
+## 👤 Autor
+
+**Rodrigo Verçosa**: [LinkedIn](https://www.linkedin.com/in/rodrigo-ver%C3%A7osa-5a2a71170) · [GitHub](https://github.com/RodrigoVercosa118427)
